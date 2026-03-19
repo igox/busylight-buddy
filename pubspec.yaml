@@ -1,0 +1,32 @@
+name: busylight_app
+description: Flutter app to control your DIY BusyLight (ESP32 + Microdot)
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # HTTP client
+  http: ^1.2.0
+  # State management
+  flutter_riverpod: ^2.5.1
+  riverpod_annotation: ^2.3.5
+  # Persistent settings (IP address, etc.)
+  shared_preferences: ^2.2.3
+  # Color picker
+  flutter_colorpicker: ^1.0.3
+  # Icons
+  cupertino_icons: ^1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  build_runner: ^2.4.9
+  riverpod_generator: ^2.4.0
+
+flutter:
+  uses-material-design: true
