@@ -2,14 +2,16 @@
 
 Multiplatform Flutter app to control your DIY [BusyLight](https://github.com/igox/busylight) (ESP32 + MicroPython + Microdot).
 
-Supports **iOS**, **iPadOS**, **macOS**, **Android**, and **Windows**.
+Supports **iOS**, **ipadOS**, **Android**, **macOS**, and **Windows**.
 
 ---
 
 ## Downloads
 
-[![Windows](https://img.shields.io/badge/Windows-Installer-0078D4?style=for-the-badge&logo=windows&logoColor=white)](downloads/BusyLight-Buddy-Installer.exe)
-[![Android](https://img.shields.io/badge/Android-APK-3DDC84?style=for-the-badge&logo=android&logoColor=white)](downloads/org.igox.apps.android.busylight-buddy-release.apk)
+[![Windows](https://img.shields.io/badge/Windows-Installer-0078D4?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/igox/busylight-buddy/releases/download/v0.0.1/BusyLight-Buddy-Installer.exe)
+[![Android](https://img.shields.io/badge/Android-APK-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://github.com/igox/busylight-buddy/releases/download/v0.0.1/org.igox.apps.android.busylight-buddy-release.apk)
+
+Or browse all releases on the [Releases page](https://github.com/igox/busylight-buddy/releases).
 
 ---
 
