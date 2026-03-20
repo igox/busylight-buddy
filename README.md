@@ -6,6 +6,13 @@ Supports **iOS**, **ipadOS**, **Android**, **macOS**, and **Windows**.
 
 ---
 
+## Downloads
+
+[![Windows](https://img.shields.io/badge/Windows-Installer-0078D4?style=for-the-badge&logo=windows&logoColor=white)](downloads/BusyLight-Buddy-Installer.exe)
+[![Android](https://img.shields.io/badge/Android-APK-3DDC84?style=for-the-badge&logo=android&logoColor=white)](downloads/org.igox.apps.android.busylight-buddy-release.apk)
+
+---
+
 ## Screenshots (iOS)
 
 <img src="doc/screenshots/ios-screenshot-main.png" width="300" alt="BusyLight Companion — main screen" /> <img src="doc/screenshots/ios-screenshot-config.png" width="300" alt="BusyLight Companion — settings" />
@@ -113,7 +120,7 @@ busylight_app/
 
 ### Android — build APK
 
-Two helper scripts are available at the in the `android/` folder to build and rename the APK in one step — one for macOS/Linux, one for Windows.
+Two helper scripts are available in the `android/` folder to build and rename the APK in one step — one for macOS/Linux, one for Windows.
 
 **macOS / Linux:**
 ```bash
