@@ -21,10 +21,9 @@ Supports **iOS**, **ipadOS**, **Android**, **macOS**, and **Windows**.
 
 ### Custom color presets
 - Color picker
-- **Save & Apply** — pick a color, name it, save as a reusable preset and apply to device
+- **Save & Apply** — pick a color, name it, save as a reusable preset and apply to BusyLight
 - **Apply only** — apply color without saving
 - Custom preset chips displayed in a horizontal scrollable row
-- Overflow indicator: fade + arrow + `· +N more` counter when presets overflow
 - Long press on a preset chip to **Edit** (color + name) or **Delete**
 - Edit mode updates the preset locally without applying to the BusyLight
 
