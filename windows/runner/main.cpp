@@ -7,6 +7,9 @@
 #include "utils.h"
 
 #include <commctrl.h>
+
+#include "resource.h"
+
 #pragma comment(lib, "comctl32.lib")
 
 #define WM_TRAYICON (WM_USER + 1)
@@ -22,7 +25,18 @@ void AddTrayIcon(HWND hwnd) {
   nid.uID = 1;
   nid.uFlags = NIF_ICON | NIF_MESSAGE | NIF_TIP;
   nid.uCallbackMessage = WM_TRAYICON;
-  nid.hIcon = LoadIcon(GetModuleHandle(nullptr), MAKEINTRESOURCE(IDI_APPLICATION));
+  nid.hIcon = (HICON)LoadImage(
+    GetModuleHandle(nullptr),
+    MAKEINTRESOURCE(IDI_APP_ICON),
+    IMAGE_ICON,
+    GetSystemMetrics(SM_CXSMICON),
+    GetSystemMetrics(SM_CYSMICON),
+    LR_DEFAULTCOLOR
+  );
+  if (!nid.hIcon) {
+    // Fallback to system icon if app icon not found
+    nid.hIcon = LoadIcon(nullptr, IDI_APPLICATION);
+  }
   wcscpy_s(nid.szTip, L"BusyLight Buddy");
   Shell_NotifyIcon(NIM_ADD, &nid);
 }
