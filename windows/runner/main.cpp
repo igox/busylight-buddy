@@ -6,6 +6,9 @@
 #include "flutter_window.h"
 #include "utils.h"
 
+#include <commctrl.h>
+#pragma comment(lib, "comctl32.lib")
+
 #define WM_TRAYICON (WM_USER + 1)
 #define ID_TRAY_EXIT 1001
 #define ID_TRAY_SHOW 1002
@@ -19,7 +22,7 @@ void AddTrayIcon(HWND hwnd) {
   nid.uID = 1;
   nid.uFlags = NIF_ICON | NIF_MESSAGE | NIF_TIP;
   nid.uCallbackMessage = WM_TRAYICON;
-  nid.hIcon = LoadIcon(GetModuleHandle(nullptr), MAKEINTRESOURCE(IDI_APP_ICON));
+  nid.hIcon = LoadIcon(GetModuleHandle(nullptr), MAKEINTRESOURCE(IDI_APPLICATION));
   wcscpy_s(nid.szTip, L"BusyLight Buddy");
   Shell_NotifyIcon(NIM_ADD, &nid);
 }
@@ -55,7 +58,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE instance, _In_opt_ HINSTANCE prev,
   FlutterWindow window(project);
   Win32Window::Point origin(10, 10);
   Win32Window::Size size(420, 820);
-  if (!window.CreateAndShow(L"BusyLight Buddy", origin, size)) {
+  if (!window.Create(L"BusyLight Buddy", origin, size)) {
     return EXIT_FAILURE;
   }
 
