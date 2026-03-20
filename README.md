@@ -39,6 +39,7 @@ Supports **iOS**, **macOS**, and **Android**.
 ### Settings
 - Device address (hostname or IP, e.g. `http://igox-busylight.local`)
 - Polling interval slider (Off → 1 min)
+- Start with session (macOS and Windows only) — launch automatically at login
 
 ### UX & feedback
 - Loading spinner per button during API calls (no full-screen takeover)
@@ -60,6 +61,7 @@ flutter run -d iphone       # iOS simulator
 open -a Simulator           # open iOS simulator first if needed
 flutter run -d macos        # macOS
 flutter run -d android      # Android emulator
+flutter run -d windows      # Windows
 ```
 
 ---
@@ -77,7 +79,8 @@ busylight_app/
 │   │   ├── busylight_color.dart       # Color model (r/g/b/brightness)
 │   │   └── color_preset.dart          # Named color preset model
 │   ├── services/
-│   │   └── busylight_service.dart     # All REST API calls
+│   │   ├── busylight_service.dart     # All REST API calls
+│   │   └── autostart_service.dart     # Start with session (macOS + Windows)
 │   ├── providers/
 │   │   ├── busylight_provider.dart    # Status, color, brightness, polling, config
 │   │   └── presets_provider.dart      # Custom color presets (CRUD + persistence)
@@ -128,19 +131,27 @@ In both `macos/Runner/DebugProfile.entitlements` and `macos/Runner/Release.entit
 <true/>
 ```
 
-### macOS — window size
+### Windows — build release
 
-In `macos/Runner/Base.lproj/MainMenu.xib`, set initial window size to 420×820:
-```xml
-<rect key="contentRect" x="335" y="390" width="420" height="820"/>
-<rect key="frame" x="0.0" y="0.0" width="420" height="820"/>
+```bash
+flutter build windows --release
 ```
 
-In `macos/Runner/MainFlutterWindow.swift`:
-```swift
-self.minSize = NSSize(width: 420, height: 820)
-self.setContentSize(NSSize(width: 420, height: 820))
-```
+### Windows — build installer
+
+The repository includes an [Inno Setup](https://jrsoftware.org/isdl.php) configuration file at the root of the repo to package the app as a Windows installer.
+
+1. Download and install [Inno Setup](https://jrsoftware.org/isdl.php)
+2. Build the release app first:
+   ```bash
+   flutter build windows --release
+   ```
+3. Open `busylight-buddy-windows-installer-builder.iss` in Inno Setup Compiler and click **Compile**, or run from the command line:
+   ```bash
+   iscc busylight-buddy-windows-installer-builder.iss
+   ```
+
+This generates a standalone `.exe` installer in the `windows/installer/` folder.
 
 ### App icon (all platforms)
 
