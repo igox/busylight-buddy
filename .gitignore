@@ -46,3 +46,4 @@ app.*.map.json
 
 .flutter-plugins-dependencies
 android/key.properties
+windows/installer/*
