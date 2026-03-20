@@ -1,8 +1,14 @@
-# BusyLight Buddy
+# BusyLight Companion
 
 Multiplatform Flutter app to control your DIY [BusyLight](https://github.com/igox/busylight) (ESP32 + MicroPython + Microdot).
 
 Supports **iOS**, **macOS**, and **Android**.
+
+---
+
+## Screenshots
+
+<img src="assets/ios-screenshot-main.png" width="300" alt="BusyLight Companion — main screen" /> <img src="assets/ios-screenshot-config.png" width="300" alt="BusyLight Companion — settings" />
 
 ---
 
