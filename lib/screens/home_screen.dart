@@ -323,14 +323,6 @@ class _BodyState extends ConsumerState<_Body> {
       ),
     );
   }
-
-  void _saveAndApply(BuildContext ctx, String name, BusylightColor color) {
-    if (name.trim().isEmpty) return;
-    Navigator.pop(ctx);
-    ref.read(presetsProvider.notifier).add(name, color);
-    ref.read(colorProvider.notifier).set(color);
-    ref.read(busylightStatusProvider.notifier).setLocalStatus(BusylightStatus.colored);
-  }
 }
 
 // ── Presets scroller with overflow indicator ──────────────────────────────────
