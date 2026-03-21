@@ -1,3 +1,7 @@
+NOTICE: REPOSITORY IS NOW ARCHIVED
+
+CODE IS HOSTED @ http://code.igox.org/iGoX/busylight
+
 # BusyLight Buddy
 
 Multiplatform Flutter app to control your DIY [BusyLight](https://github.com/igox/busylight) (ESP32 + MicroPython + Microdot).
